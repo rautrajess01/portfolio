@@ -64,3 +64,139 @@ section {
     height: 100%;
     width: 100%;
 }
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.content {
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 48px;
+    margin: 0 0 10px;
+    color: aquamarine;
+}
+
+h2 {
+    color: rgb(7, 83, 73);
+    font-size: 24px;
+    margin: 0 0 20px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 0 30px;
+    padding-top: 20px;
+}
+
+.buttons {
+    padding-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.buttons a {
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+
+}
+
+.hire-me {
+    border: 2px solid rgb(7, 83, 73);
+    background-color: rgb(13, 182, 151);
+    color: black;
+}
+
+.hire-me:hover {
+    background-color: rgb(7, 83, 73);
+}
+
+.talk {
+    border: 2px solid rgb(7, 83, 73);
+    background-color: rgb(13, 182, 151);
+    color: black;
+}
+
+.talk:hover {
+    background-color: rgb(7, 83, 73);
+    color: #ffffff;
+}
+
+.socials {
+    display: flex;
+    gap: 15px;
+    align-items: end;
+}
+
+.socials a {
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.socials a:hover {
+    color: rgb(7, 83, 73);
+}
+
+.image {
+    max-width: 400px;
+}
+
+.image img {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    border-radius: 10%;
+}
+.socials {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    padding-top: 110px;
+}
+
+.socials a {
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+.socials svg {
+    width: 32px; 
+    height: 32px; 
+    margin-right: 8px; 
+    transition: transform 0.2s ease, fill 0.2s ease;
+    fill: currentColor; 
+}
+
+.socials a:hover svg {
+    transform: scale(1.1);
+}
+#home{
+    background-color: rgb(213, 246, 233);
+}
+.description {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.navbar-nav{
+    padding-right: 200px;
+}
+.nav-item{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+}
