@@ -22,4 +22,3 @@ upArrow.onclick = function() {
         behavior: "smooth" 
     });
 };
-
