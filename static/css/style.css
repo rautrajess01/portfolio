@@ -13,9 +13,13 @@ body{
     font-family: 'Inter', sans-serif;
     
 }
+
 main{
     padding-left: 400px;
     padding-right: 400px;
+}
+main section{
+    margin-top: 10px;
 }
 header{
     position: fixed;
@@ -28,23 +32,46 @@ main {
     padding-left: 400px;
     padding-right: 400px;
 }
-
+main #contact{
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.intro {
+    color: #333; 
+    font-size: 18px;
+}
 /* Media query for tablets and smaller screens (below 1024px) */
 @media (max-width: 1024px) {
-    header .container-fluid,
-    main {
+   header .container-fluid, main {
         padding-left: 20px; /* Reduce padding for smaller screens */
         padding-right: 20px;
     }
+    main #contact{
+        padding-right: 50px;
+        padding-left: 50px;
+
+    }
+    .intro{
+        font-size: 14px;
+    }
+    
 }
 
 /* Media query for mobile devices (below 768px) */
 @media (max-width: 768px) {
-    header .container-fluid,
-    main {
+    header .container-fluid,main {
         padding-left: 15px; /* Further reduce padding for mobile devices */
         padding-right: 15px;
     }
+    main #contact{
+        padding-right: 50px;
+        padding-left: 50px;
+
+    }
+    .intro{
+        font-size: 14px;
+    }
+
 }
 
 .navbar {
@@ -120,40 +147,15 @@ section {
 }
 
 
-
-p {
-    font-size: 16px;
+.description {
+    font-size: 17px; 
+    color: #444;
     line-height: 1.6;
-    margin: 0 0 30px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: lighter;
     text-align: justify;
-    padding-top: 5px;
 }
-.content h1,h2{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.socials {
-    display: flex;
-    gap: 15px;
-    align-items: end;
-}
-
-.socials a {
-    color: black;
-    font-size: 10px;
-    text-decoration: none;
-    border-radius: 50%;
-}
-.image{
-    justify-content: center;
-    display: flex;
-    align-items: center;
-}
-
 
 .image img {
+    margin-bottom: 20px;
     width: 100%;
     max-width: 200px;
     margin: 20px auto;
@@ -162,7 +164,7 @@ p {
 .socials {
     margin-top: 30px;
     display: flex;
-    gap: 15px;
+    gap: 20px;
 }
 
 .socials a {
@@ -189,6 +191,8 @@ p {
     font-size: 1rem;
     line-height: 1.5;
     margin-bottom: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
 }
 
 .nav-item{
@@ -210,11 +214,15 @@ p {
     cursor: pointer;
     text-decoration: none;
     transition: background-color 0.3s ease, transform 0.2s ease;
+
 }
 
 .button:hover {
     background-color: #444;
     transform: translateY(-2px);
+    background: #222; 
+    transform: scale(1.05); 
+    transition: 0.3s ease-in-out;
 }
 
 .button:active {
@@ -224,4 +232,125 @@ p {
 .icon {
     display: inline-block;
     font-size: 18px;
+}
+
+#contact {
+    padding: 200px 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    height: 100vh; /* Ensure the parent container has enough height */
+}
+
+.mail, .linkedin { 
+    background-color: #f3efef;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-grow: 1;  /* Ensures both divs take equal height space */
+    margin-top: 10px;  /* You can adjust this if needed */
+    border-radius: 3%;
+    padding: 20px;  /* Optional: Ensure the internal padding is equal for both */
+}
+
+.email-title, .linkedin-title {
+    font-size: small;
+    font-weight: bolder;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-bottom: 1px;
+}
+
+.email-add {
+    font-size: 10px;
+    font-weight: 100;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-bottom: 2px;
+}
+
+.linkedin-svg, .email-svg {
+    height: 40px;
+}
+
+.btn-mail, .btn-linkedin {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background-color: #333;
+    color: #fff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-bottom: 10px;
+}
+intro
+.btn-mail:hover, .btn-linkedin:hover {
+    background-color: #444;
+    transform: translateY(-2px);
+    background: #222;
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+}
+
+.btn-mail:active, .btn-linkedin:active {
+    transform: translateY(0);
+}
+.linkedin-title {
+    padding-bottom: 15px;
+}
+.title{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bolder;
+    margin-top: 10px;
+}
+#about{
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.introduction, .work-exp, .education{
+    background-color: #f3efef;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    margin-top: 10px;
+    flex-grow: 1;
+    text-align: justify;
+    justify-content: center;
+    align-items: center;
+}
+.introduction{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.svg-icon{
+    height: 40px;
+    width: 40px;
+}
+.work-exp{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    padding-top: 10px;
+}
+.work-bar{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: start;
+}
+.job-title, .work-bar{
+    padding-left: 10px;
 }
