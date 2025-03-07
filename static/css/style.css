@@ -40,6 +40,7 @@ main #contact{
     color: #333; 
     font-size: 18px;
 }
+
 /* Media query for tablets and smaller screens (below 1024px) */
 @media (max-width: 1024px) {
    header .container-fluid, main {
@@ -53,10 +54,9 @@ main #contact{
     }
     .intro{
         font-size: 14px;
-    }
     
 }
-
+}
 /* Media query for mobile devices (below 768px) */
 @media (max-width: 768px) {
     header .container-fluid,main {
@@ -70,10 +70,8 @@ main #contact{
     }
     .intro{
         font-size: 14px;
-    }
-
 }
-
+}
 .navbar {
     z-index: 1020;
     background-color: whitesmoke;
@@ -318,7 +316,7 @@ section {
     justify-content: center;
     align-items: center;
 }
-.introduction, .work-exp, .education{
+.work-exp, .education{
     background-color: #f3efef;
     display: flex;
     flex-direction: column;
