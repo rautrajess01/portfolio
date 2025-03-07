@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+html, body {
+    overflow-x: hidden;
+}
 html {
     scroll-behavior: smooth;
 }
@@ -48,8 +51,8 @@ main #contact{
         padding-right: 20px;
     }
     main #contact{
-        padding-right: 50px;
-        padding-left: 50px;
+        padding-right: 20px;
+        padding-left: 20px;
 
     }
     .intro{
@@ -64,8 +67,8 @@ main #contact{
         padding-right: 15px;
     }
     main #contact{
-        padding-right: 50px;
-        padding-left: 50px;
+        padding-right: 20px;
+        padding-left: 20px;
 
     }
     .intro{
@@ -350,4 +353,7 @@ section {
 }
 .job-title, .work-bar{
     padding-left: 10px;
+}
+html, body {
+    overflow-x: hidden;
 }
