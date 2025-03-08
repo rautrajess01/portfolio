@@ -525,29 +525,118 @@ html, body {
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-  }
-  
-  /* Light mode styles */
-  #darkModeToggle {
     background-color: #f8f9fa;
-    color: #212529;
-    border: 1px solid #dee2e6;
+    z-index: 1100; /* Ensure it's above other elements */
   }
-  
-  /* Dark mode styles */
-  [data-bs-theme="dark"] #darkModeToggle {
-    background-color: #212529;
-    color: #f8f9fa;
-    border: 1px solid #495057;
-  }
-  
-  /* Hover effect */
-  #darkModeToggle:hover {
-    transform: scale(1.1);
-  }
-  @media (max-width: 820px) {
-    #darkModeToggleContainer {
-        top: 50%;
-        left: 40%;
+  #darkModeToggle svg,
+#darkModeToggleLg svg {
+    width: 20px;
+    height: 20px;
+}
+[data-bs-theme="dark"] #darkModeToggle,
+[data-bs-theme="dark"] #darkModeToggleLg {
+    background-color: #343a40;
+    color: #f8f9fa; 
+}
+  /* Light mode styles */
+  /* Dark mode for all cards */
+[data-bs-theme="dark"] .card, 
+[data-bs-theme="dark"] .skill-card, 
+[data-bs-theme="dark"] .experience-card {
+    background-color: #333; /* Dark background */
+    color: white; /* Light text */
+    border: 1px solid #444; /* Slight border for visibility */
+}
+[data-bs-theme="dark"] .email-add,
+[data-bs-theme="dark"] .email-title,
+[data-bs-theme="dark"] .linkedin-title {
+    color: white !important;
+}
+/* Default SVG color */
+.social-icon svg path {
+    fill: currentColor;
+}
+
+/* Light Mode (Default) */
+body {
+    --icon-color: black;  /* Default SVG color */
+}
+
+/* Dark Mode */
+[data-bs-theme="dark"] body {
+    --icon-color: white;  /* Change SVG color in dark mode */
+}
+
+/* Apply color */
+.social-icon {
+    color: var(--icon-color);
+}
+
+[data-bs-theme="dark"] #about .title,
+[data-bs-theme="dark"] #about h2,
+[data-bs-theme="dark"] #about h3,
+[data-bs-theme="dark"] #about h4 {
+    color: white !important;
+}
+[data-bs-theme="dark"] svg {
+    fill: white !important;
+    color: white !important;
+}
+
+/* Ensure paragraph text is visible in dark mode */
+[data-bs-theme="dark"] #about .description {
+    color: #ddd;
+}
+/* Dark mode for other elements */
+[data-bs-theme="dark"] body {
+    background-color: #121212; /* Dark background */
+    color: white;
+}
+
+/* Dark mode for navbar */
+[data-bs-theme="dark"] .navbar {
+    background-color: #222;
+}
+
+/* Dark mode for footer */
+[data-bs-theme="dark"] .footer {
+    background-color: #222 !important;
+    color: white !important;
+}
+
+/* Dark mode for buttons */
+[data-bs-theme="dark"] .btn-primary {
+    background-color: white !important;
+    color: black !important;
+}
+
+[data-bs-theme="dark"] .btn-primary:hover {
+    background-color: #ddd !important;
+    color: black !important;
+}
+
+/* Dark mode for text */
+[data-bs-theme="dark"] .description, 
+[data-bs-theme="dark"] .intro, 
+[data-bs-theme="dark"] .title {
+    color: white;
+}
+
+[data-bs-theme="dark"] .btn-mail {
+    background-color: white !important;
+    color: black !important;
+}
+[data-bs-theme="dark"] .footer .text-black {
+    color: white !important;
+}
+
+@media (max-width: 991px) {
+    /* For tablet and smaller screens */
+    #darkModeToggle {
+        position: relative;
+        transform: translateX(150%);
+        margin: 0;
+        top: 50%; /* Center vertically */
+
     }
 }

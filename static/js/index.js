@@ -23,37 +23,48 @@ upArrow.onclick = function() {
     });
 };
 document.addEventListener('DOMContentLoaded', function() {
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    const darkModeIcon = document.getElementById('darkModeIcon');
-    const htmlElement = document.documentElement;
-    
-    // Check for saved theme preference or respect OS preference
-    if (localStorage.getItem('darkMode') === 'enabled' || 
-        (window.matchMedia('(prefers-color-scheme: dark)').matches && 
-         localStorage.getItem('darkMode') !== 'disabled')) {
-      enableDarkMode();
-    }
-    
-    // Toggle dark mode
-    darkModeToggle.addEventListener('click', function() {
-      if (htmlElement.getAttribute('data-bs-theme') === 'dark') {
-        disableDarkMode();
-      } else {
-        enableDarkMode();
-      }
-    });
-    
-    function enableDarkMode() {
-      htmlElement.setAttribute('data-bs-theme', 'dark');
-      darkModeIcon.classList.remove('bi-moon-stars');
-      darkModeIcon.classList.add('bi-sun');
-      localStorage.setItem('darkMode', 'enabled');
-    }
-    
-    function disableDarkMode() {
-      htmlElement.setAttribute('data-bs-theme', 'light');
-      darkModeIcon.classList.remove('bi-sun');
-      darkModeIcon.classList.add('bi-moon-stars');
-      localStorage.setItem('darkMode', 'disabled');
-    }
-  });
+  // Check for saved theme preference or use default
+  const currentTheme = localStorage.getItem('theme') || 'light';
+  
+  // Apply the saved theme or default
+  if (currentTheme === 'dark') {
+      document.documentElement.setAttribute('data-bs-theme', 'dark');
+      toggleIcons(true);
+  }
+  
+  // Function to handle theme toggle
+  function toggleTheme() {
+      // Get current theme
+      const currentTheme = document.documentElement.getAttribute('data-bs-theme') || 'light';
+      const isDarkMode = currentTheme === 'light' ? false : true;
+      
+      // Toggle theme
+      const newTheme = isDarkMode ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-bs-theme', newTheme);
+      
+      // Toggle icon visibility
+      toggleIcons(!isDarkMode);
+      
+      // Save preference to localStorage
+      localStorage.setItem('theme', newTheme);
+  }
+  
+  // Add click event to the small screen button
+  document.getElementById('darkModeToggle')?.addEventListener('click', toggleTheme);
+  
+  // Add click event to the large screen button
+  document.getElementById('darkModeToggleLg')?.addEventListener('click', toggleTheme);
+  
+  // Function to toggle all icon sets
+  function toggleIcons(isDarkMode) {
+      // Toggle all sun icons
+      document.querySelectorAll('.sun-icon').forEach(icon => {
+          icon.classList.toggle('d-none', isDarkMode);
+      });
+      
+      // Toggle all moon icons
+      document.querySelectorAll('.moon-icon').forEach(icon => {
+          icon.classList.toggle('d-none', !isDarkMode);
+      });
+  }
+});
