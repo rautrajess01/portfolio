@@ -308,17 +308,8 @@ main{
     color: #6c757d;
     margin-bottom: 15px;
 }
-#about {
-    padding: 80px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: auto; 
-}
 
 .about-container {
-    max-width: 1200px;
-    margin: 0 auto;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -343,11 +334,6 @@ main{
     margin-bottom: 5px;
 }
 
-.introduction {
-    margin-bottom: 30px;
-    width: 100%;
-    max-width: 900px;
-}
 
 .introduction .description {
     text-align: justify;
@@ -355,9 +341,7 @@ main{
     line-height: 1.6;
 }
 
-.introduction .description:last-child {
-    margin-bottom: 0;
-}
+
 
 .experience-grid {
     display: flex;
