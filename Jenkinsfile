@@ -6,15 +6,17 @@ pipeline {
     CONTAINER_NAME = "portfolio"
     }
     stages {
-       stage('Checkout Code')
+       stage('Checkout Code'){
        steps {
         git branch: 'main', url: 'https://github.com/rautrajess01/portfolio.git'
        }
-       stage ("Build Docker Image")
+       }
+       stage ("Build Docker Image") {
        steps {
         sh ''' 
         docker build -t $IMAGE_NAME:$IMAGE_TAG .
         '''
+       }
        }
        stage('Run Container')
        {
