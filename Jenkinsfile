@@ -8,7 +8,7 @@ pipeline {
     stages {
        stage('Checkout Code')
        steps {
-        git branch: 'main', url: 'https://github.com/rautrajess01/myportfolio.git'
+        git branch: 'main', url: 'https://github.com/rautrajess01/portfolio.git'
        }
        stage ("Build Docker Image")
        steps {
